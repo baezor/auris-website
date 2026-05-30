@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --paper:        #FBF4E9;
+  --paper-2:      #F4E8D5;
+  --paper-3:      #EEDFC8;
+  --surface:      #FFFDF8;
+  --ink:          #2A1C13;
+  --ink-2:        #6B5746;
+  --ink-3:        #9C8A77;
+  --line:         #E3D4BC;
+  --line-strong:  #CDB99B;
+
+  --clay:         #C75A35;
+  --clay-hover:   #B54E2C;
+  --clay-press:   #9F4324;
+  --clay-tint:    #F6E1D4;
+  --clay-tint-2:  #EFCBB6;
+
+  --honey:        #E8A53D;
+  --honey-hover:  #D8941F;
+  --honey-tint:   #FBEDD0;
+
+  --pine:         #2C6E54;
+  --pine-hover:   #235A45;
+  --pine-tint:    #D8E8DF;
+
+  --success:      #2C6E54;
+  --success-tint: #D8E8DF;
+  --warning:      #E8A53D;
+  --warning-tint: #FBEDD0;
+  --danger:       #BE3A28;
+  --danger-tint:  #F6DBD4;
+  --info:         #2F6E76;
+  --info-tint:    #D6E7E8;
+
+  --link:         var(--clay);
+  --focus-ring:   #E8A53D;
+
+  --wave-1:       #C75A35;
+  --wave-2:       #E08A4A;
+  --wave-3:       #E8A53D;
+  --wave-track:   #EAD9C0;
+
+  --font-display: 'Bitter', Georgia, 'Times New Roman', serif;
+  --font-sans:    'Hanken Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono:    'IBM Plex Mono', 'SFMono-Regular', Menlo, monospace;
+
+  --fs-display: 3.5rem;
+  --fs-h1:      2.5rem;
+  --fs-h2:      1.875rem;
+  --fs-h3:      1.375rem;
+  --fs-h4:      1.125rem;
+  --fs-body:    1rem;
+  --fs-small:   0.875rem;
+  --fs-caption: 0.75rem;
+
+  --lh-tight: 1.1;
+  --lh-snug:  1.25;
+  --lh-body:  1.55;
+
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+
+  --r-sm:   6px;
+  --r-md:   10px;
+  --r-lg:   16px;
+  --r-xl:   24px;
+  --r-pill: 999px;
+
+  --shadow-sm:  0 1px 2px rgba(42,28,19,.08);
+  --shadow-md:  0 2px 8px rgba(42,28,19,.10), 0 1px 2px rgba(42,28,19,.06);
+  --shadow-lg:  0 10px 28px rgba(42,28,19,.14), 0 2px 6px rgba(42,28,19,.08);
+  --shadow-pop: 0 18px 48px rgba(42,28,19,.20);
+  --glow-honey: 0 0 0 4px rgba(232,165,61,.28);
+
+  --ease-out:  cubic-bezier(.22,.61,.36,1);
+  --ease-soft: cubic-bezier(.4,0,.2,1);
+  --dur-fast:  120ms;
+  --dur-base:  200ms;
+  --dur-slow:  320ms;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  background: var(--paper);
+}
+
+/* Button press effect (replaces React onMouseDown handlers) */
+.au-btn:active {
+  transform: scale(.98);
+}
+
+/* Collapse nav links on small screens */
+@media (max-width: 760px) {
+  .navlinks { display: none !important; }
+}
