@@ -24,8 +24,7 @@ export function SIcon({ name, size = 22, fill = false }) {
 
 const LOGO = '/assets/auris-logo.svg';
 const MARK = '/assets/auris-mark.svg';
-const GITHUB = 'https://github.com/platanus-build-night/platanus-build-night-26-mx-baezor';
-const GITHUB_QUICKSTART = GITHUB + '#quick-start';
+const GITHUB = 'https://github.com/grupolibermx/auris';
 
 function Btn({ kind = 'primary', children, icon }) {
   const base = { display: 'inline-flex', alignItems: 'center', gap: 8, fontFamily: 'var(--font-sans)', fontWeight: 700, fontSize: 16, borderRadius: 'var(--r-pill)', padding: '13px 24px', cursor: 'pointer', border: 'none', textDecoration: 'none', lineHeight: 1, whiteSpace: 'nowrap', transition: 'background .15s, transform .1s' };
@@ -50,7 +49,7 @@ export function SiteNav() {
           <a href="#codigo-abierto" style={link}>Código abierto</a>
           <a href={GITHUB} target="_blank" rel="noopener" style={{ ...link, display: 'inline-flex', alignItems: 'center', gap: 6 }}><SIcon name="github" size={18} /> GitHub</a>
         </div>
-        <a href={GITHUB_QUICKSTART} target="_blank" rel="noopener" className="au-btn" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontFamily: 'var(--font-sans)', fontWeight: 700, fontSize: 16, borderRadius: 'var(--r-pill)', padding: '13px 24px', cursor: 'pointer', border: 'none', textDecoration: 'none', lineHeight: 1, whiteSpace: 'nowrap', background: 'var(--clay)', color: '#fff', boxShadow: 'var(--shadow-sm)' }}>Empieza gratis <SIcon name="arrow-right" size={18} /></a>
+        <a href={GITHUB} target="_blank" rel="noopener" className="au-btn" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontFamily: 'var(--font-sans)', fontWeight: 700, fontSize: 16, borderRadius: 'var(--r-pill)', padding: '13px 24px', cursor: 'pointer', border: 'none', textDecoration: 'none', lineHeight: 1, whiteSpace: 'nowrap', background: 'var(--clay)', color: '#fff', boxShadow: 'var(--shadow-sm)' }}>Empieza gratis <SIcon name="arrow-right" size={18} /></a>
       </div>
     </nav>
   );
@@ -91,7 +90,7 @@ export function Hero() {
         <h1 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(40px, 6vw, 60px)', lineHeight: 1.04, letterSpacing: '-.02em', margin: '20px 0 0', color: 'var(--ink)', textWrap: 'balance' }}>Tu maestro de bolsillo, en el camino.</h1>
         <p style={{ fontFamily: 'var(--font-sans)', fontSize: 19, lineHeight: 1.55, color: 'var(--ink-2)', margin: '18px 0 0', maxWidth: 520 }}>Sube un PDF o tus apuntes y Auris los convierte en una lección de audio narrada por IA, lista en tu WhatsApp para el próximo camión. Sin datos extra, sin app nueva, sin cambiar de número.</p>
         <div style={{ display: 'flex', gap: 12, marginTop: 28, flexWrap: 'wrap' }}>
-          <a href={GITHUB_QUICKSTART} target="_blank" rel="noopener" className="au-btn" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontFamily: 'var(--font-sans)', fontWeight: 700, fontSize: 16, borderRadius: 'var(--r-pill)', padding: '13px 24px', cursor: 'pointer', border: 'none', textDecoration: 'none', lineHeight: 1, whiteSpace: 'nowrap', background: 'var(--clay)', color: '#fff', boxShadow: 'var(--shadow-sm)' }}>Ver en GitHub <SIcon name="arrow-right" size={18} /></a>
+          <a href={GITHUB} target="_blank" rel="noopener" className="au-btn" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontFamily: 'var(--font-sans)', fontWeight: 700, fontSize: 16, borderRadius: 'var(--r-pill)', padding: '13px 24px', cursor: 'pointer', border: 'none', textDecoration: 'none', lineHeight: 1, whiteSpace: 'nowrap', background: 'var(--clay)', color: '#fff', boxShadow: 'var(--shadow-sm)' }}>Ver en GitHub <SIcon name="arrow-right" size={18} /></a>
           <a href="#como-funciona" className="au-btn" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontFamily: 'var(--font-sans)', fontWeight: 700, fontSize: 16, borderRadius: 'var(--r-pill)', padding: '13px 24px', cursor: 'pointer', textDecoration: 'none', lineHeight: 1, whiteSpace: 'nowrap', background: 'transparent', color: 'var(--ink)', border: '1.5px solid var(--line-strong)' }}>Cómo funciona</a>
         </div>
         <div style={{ display: 'flex', gap: 22, marginTop: 26, fontFamily: 'var(--font-sans)', fontSize: 14, color: 'var(--ink-2)', flexWrap: 'wrap' }}>
@@ -160,7 +159,6 @@ export function OpenSource() {
           <p style={{ fontFamily: 'var(--font-sans)', fontSize: 17, lineHeight: 1.6, color: 'rgba(251,244,233,.85)', margin: '0 0 24px' }}>Auris es un motor API-first con proveedores intercambiables: Claude o cualquier LLM para el guion, ElevenLabs o TTS local para la voz. Levanta tu instancia, carga tu currículo y los datos de tus estudiantes se quedan en tu servidor.</p>
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
             <a href={GITHUB} target="_blank" rel="noopener" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'var(--paper)', color: 'var(--ink)', fontFamily: 'var(--font-sans)', fontWeight: 700, fontSize: 16, borderRadius: 'var(--r-pill)', padding: '13px 22px', textDecoration: 'none', whiteSpace: 'nowrap' }}><SIcon name="github" size={18} /> Ver en GitHub</a>
-            <a href={GITHUB_QUICKSTART} target="_blank" rel="noopener" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, color: 'var(--paper)', fontFamily: 'var(--font-sans)', fontWeight: 700, fontSize: 16, border: '1.5px solid rgba(251,244,233,.4)', borderRadius: 'var(--r-pill)', padding: '13px 22px', textDecoration: 'none', whiteSpace: 'nowrap' }}><SIcon name="server" size={18} /> Guía de inicio rápido</a>
           </div>
         </div>
         <div style={{ flex: '1 1 360px', minWidth: 300 }}>
@@ -219,18 +217,14 @@ export function SiteFooter() {
           <div>
             <div style={{ fontFamily: 'var(--font-sans)', fontWeight: 700, fontSize: 14, color: 'var(--ink)', marginBottom: 12 }}>Repositorio</div>
             <a href={GITHUB} target="_blank" rel="noopener" style={linkStyle}>GitHub</a>
-            <a href={GITHUB + '#architecture--api-core--clients'} target="_blank" rel="noopener" style={linkStyle}>Documentación</a>
-            <a href={GITHUB_QUICKSTART} target="_blank" rel="noopener" style={linkStyle}>Autoalojamiento</a>
-            <a href={GITHUB + '/blob/main/CONTRIBUTING.md'} target="_blank" rel="noopener" style={linkStyle}>Contribuir</a>
           </div>
           <div>
             <div style={{ fontFamily: 'var(--font-sans)', fontWeight: 700, fontSize: 14, color: 'var(--ink)', marginBottom: 12 }}>Auris</div>
             <a href={GITHUB} target="_blank" rel="noopener" style={linkStyle}>Sobre el proyecto</a>
-            <a href={GITHUB + '/blob/main/CHANGELOG.md'} target="_blank" rel="noopener" style={linkStyle}>Changelog</a>
           </div>
         </div>
       </div>
-      <div style={{ borderTop: '1px solid var(--line)', padding: '18px 24px', textAlign: 'center', fontFamily: 'var(--font-sans)', fontSize: 13, color: 'var(--ink-3)' }}>© 2026 Auris · <a href={GITHUB + '/blob/main/LICENSE'} target="_blank" rel="noopener" style={{ color: 'inherit' }}>Software libre, licencia MIT</a></div>
+      <div style={{ borderTop: '1px solid var(--line)', padding: '18px 24px', textAlign: 'center', fontFamily: 'var(--font-sans)', fontSize: 13, color: 'var(--ink-3)' }}>© 2026 Auris · Software libre, licencia MIT</div>
     </footer>
   );
 }
