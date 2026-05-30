@@ -24,6 +24,8 @@ export function SIcon({ name, size = 22, fill = false }) {
 
 const LOGO = '/assets/auris-logo.svg';
 const MARK = '/assets/auris-mark.svg';
+const GITHUB = 'https://github.com/platanus-build-night/platanus-build-night-26-mx-baezor';
+const GITHUB_QUICKSTART = GITHUB + '#quick-start';
 
 function Btn({ kind = 'primary', children, icon }) {
   const base = { display: 'inline-flex', alignItems: 'center', gap: 8, fontFamily: 'var(--font-sans)', fontWeight: 700, fontSize: 16, borderRadius: 'var(--r-pill)', padding: '13px 24px', cursor: 'pointer', border: 'none', textDecoration: 'none', lineHeight: 1, whiteSpace: 'nowrap', transition: 'background .15s, transform .1s' };
@@ -43,12 +45,12 @@ export function SiteNav() {
         <img src={LOGO} height="40" alt="Auris" style={{ display: 'block' }} />
         <div style={{ flex: 1 }} />
         <div style={{ display: 'flex', gap: 26, alignItems: 'center' }} className="navlinks">
-          <a style={link}>Cómo funciona</a>
-          <a style={link}>Para instituciones</a>
-          <a style={link}>Código abierto</a>
-          <a style={{ ...link, display: 'inline-flex', alignItems: 'center', gap: 6 }}><SIcon name="github" size={18} /> GitHub</a>
+          <a href="#como-funciona" style={link}>Cómo funciona</a>
+          <a href="#instituciones" style={link}>Para instituciones</a>
+          <a href="#codigo-abierto" style={link}>Código abierto</a>
+          <a href={GITHUB} target="_blank" rel="noopener" style={{ ...link, display: 'inline-flex', alignItems: 'center', gap: 6 }}><SIcon name="github" size={18} /> GitHub</a>
         </div>
-        <Btn kind="primary" icon="arrow-right">Empieza gratis</Btn>
+        <a href={GITHUB_QUICKSTART} target="_blank" rel="noopener" className="au-btn" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontFamily: 'var(--font-sans)', fontWeight: 700, fontSize: 16, borderRadius: 'var(--r-pill)', padding: '13px 24px', cursor: 'pointer', border: 'none', textDecoration: 'none', lineHeight: 1, whiteSpace: 'nowrap', background: 'var(--clay)', color: '#fff', boxShadow: 'var(--shadow-sm)' }}>Empieza gratis <SIcon name="arrow-right" size={18} /></a>
       </div>
     </nav>
   );
@@ -87,10 +89,10 @@ export function Hero() {
       <div style={{ flex: '1 1 420px', minWidth: 320 }}>
         <span style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontFamily: 'var(--font-sans)', fontSize: 13, fontWeight: 700, color: 'var(--pine)', background: 'var(--pine-tint)', padding: '6px 12px', borderRadius: 'var(--r-pill)' }}><SIcon name="message-circle" size={15} /> Aprende por WhatsApp · sin instalar nada</span>
         <h1 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(40px, 6vw, 60px)', lineHeight: 1.04, letterSpacing: '-.02em', margin: '20px 0 0', color: 'var(--ink)', textWrap: 'balance' }}>Tu maestro de bolsillo, en el camino.</h1>
-        <p style={{ fontFamily: 'var(--font-sans)', fontSize: 19, lineHeight: 1.55, color: 'var(--ink-2)', margin: '18px 0 0', maxWidth: 520 }}>Auris convierte tu material de estudio en lecciones que caben en tu trayecto. Escúchalas en el camión o el metro, sin gastar tus datos. Aprender empieza por escuchar.</p>
+        <p style={{ fontFamily: 'var(--font-sans)', fontSize: 19, lineHeight: 1.55, color: 'var(--ink-2)', margin: '18px 0 0', maxWidth: 520 }}>Sube un PDF o tus apuntes y Auris los convierte en una lección de audio narrada por IA, lista en tu WhatsApp para el próximo camión. Sin datos extra, sin app nueva, sin cambiar de número.</p>
         <div style={{ display: 'flex', gap: 12, marginTop: 28, flexWrap: 'wrap' }}>
-          <Btn kind="primary" icon="arrow-right">Empieza gratis</Btn>
-          <Btn kind="secondary">Cómo funciona</Btn>
+          <a href={GITHUB_QUICKSTART} target="_blank" rel="noopener" className="au-btn" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontFamily: 'var(--font-sans)', fontWeight: 700, fontSize: 16, borderRadius: 'var(--r-pill)', padding: '13px 24px', cursor: 'pointer', border: 'none', textDecoration: 'none', lineHeight: 1, whiteSpace: 'nowrap', background: 'var(--clay)', color: '#fff', boxShadow: 'var(--shadow-sm)' }}>Ver en GitHub <SIcon name="arrow-right" size={18} /></a>
+          <a href="#como-funciona" className="au-btn" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontFamily: 'var(--font-sans)', fontWeight: 700, fontSize: 16, borderRadius: 'var(--r-pill)', padding: '13px 24px', cursor: 'pointer', textDecoration: 'none', lineHeight: 1, whiteSpace: 'nowrap', background: 'transparent', color: 'var(--ink)', border: '1.5px solid var(--line-strong)' }}>Cómo funciona</a>
         </div>
         <div style={{ display: 'flex', gap: 22, marginTop: 26, fontFamily: 'var(--font-sans)', fontSize: 14, color: 'var(--ink-2)', flexWrap: 'wrap' }}>
           {['Gratis y de código abierto', 'Funciona en cualquier celular', 'Sin app que instalar'].map(t => (
@@ -105,15 +107,15 @@ export function Hero() {
 
 export function HowItWorks() {
   const steps = [
-    { icon: 'book-open', t: 'Sube tu material', d: 'Tu institución o tú cargan apuntes, PDFs o un temario. Auris los organiza en lecciones cortas.' },
-    { icon: 'headphones', t: 'Recíbelas en WhatsApp', d: 'Cada día te llega una lección en audio, lista para escuchar entre una parada y la siguiente.' },
-    { icon: 'graduation-cap', t: 'Avanza a tu ritmo', d: 'Repite, pregunta y sigue tu progreso. Lo que aprendes se queda contigo, no en tus datos.' },
+    { icon: 'book-open', t: 'Sube tu material', d: 'Carga un PDF, un temario o tus propios apuntes. El motor extrae lo esencial y lo convierte en un guion de audio narrado con IA.' },
+    { icon: 'headphones', t: 'Llega a tu WhatsApp', d: 'Recibes un mensaje de audio directo en WhatsApp. Sin app que descargar, sin cuenta que crear, sin datos extra por escuchar.' },
+    { icon: 'graduation-cap', t: 'Avanza a tu ritmo', d: 'Responde el quiz al final, repite la lección o pide que te expliquen algo de nuevo. Tu progreso se guarda en tu propio servidor.' },
   ];
   return (
-    <section style={{ background: 'var(--paper-2)', borderTop: '1px solid var(--line)', borderBottom: '1px solid var(--line)' }}>
+    <section id="como-funciona" style={{ background: 'var(--paper-2)', borderTop: '1px solid var(--line)', borderBottom: '1px solid var(--line)' }}>
       <div style={{ maxWidth: 1120, margin: '0 auto', padding: '72px 24px' }}>
         <span style={{ fontFamily: 'var(--font-sans)', fontSize: 13, fontWeight: 700, letterSpacing: '.12em', textTransform: 'uppercase', color: 'var(--clay)' }}>Cómo funciona</span>
-        <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 34, letterSpacing: '-.01em', margin: '10px 0 40px', color: 'var(--ink)' }}>Estudiar de camino al trabajo, en tres pasos.</h2>
+        <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 34, letterSpacing: '-.01em', margin: '10px 0 40px', color: 'var(--ink)' }}>De tus apuntes a tu WhatsApp, en tres pasos.</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 22 }}>
           {steps.map((s, i) => (
             <div key={i} style={{ background: 'var(--surface)', border: '1px solid var(--line)', borderRadius: 'var(--r-lg)', padding: 26, boxShadow: 'var(--shadow-sm)' }}>
@@ -150,23 +152,24 @@ export function Audience() {
 
 export function OpenSource() {
   return (
-    <section style={{ background: 'var(--pine)', color: 'var(--paper)' }}>
+    <section id="codigo-abierto" style={{ background: 'var(--pine)', color: 'var(--paper)' }}>
       <div style={{ maxWidth: 1120, margin: '0 auto', padding: '72px 24px', display: 'flex', gap: 48, alignItems: 'center', flexWrap: 'wrap' }}>
         <div style={{ flex: '1 1 380px' }}>
-          <span style={{ fontFamily: 'var(--font-sans)', fontSize: 13, fontWeight: 700, letterSpacing: '.12em', textTransform: 'uppercase', color: 'var(--honey)' }}>Código abierto</span>
+          <span style={{ fontFamily: 'var(--font-sans)', fontSize: 13, fontWeight: 700, letterSpacing: '.12em', textTransform: 'uppercase', color: 'var(--honey)' }}>Código abierto · MIT</span>
           <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 34, letterSpacing: '-.01em', margin: '10px 0 14px' }}>Tuyo para alojar, como WordPress.</h2>
-          <p style={{ fontFamily: 'var(--font-sans)', fontSize: 17, lineHeight: 1.6, color: 'rgba(251,244,233,.85)', margin: '0 0 24px' }}>Auris es abierto y autoalojable. Levanta tu propia instancia, carga tu currículo y mantén los datos de tus estudiantes contigo.</p>
+          <p style={{ fontFamily: 'var(--font-sans)', fontSize: 17, lineHeight: 1.6, color: 'rgba(251,244,233,.85)', margin: '0 0 24px' }}>Auris es un motor API-first con proveedores intercambiables: Claude o cualquier LLM para el guion, ElevenLabs o TTS local para la voz. Levanta tu instancia, carga tu currículo y los datos de tus estudiantes se quedan en tu servidor.</p>
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-            <a style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'var(--paper)', color: 'var(--ink)', fontFamily: 'var(--font-sans)', fontWeight: 700, fontSize: 16, borderRadius: 'var(--r-pill)', padding: '13px 22px', textDecoration: 'none', whiteSpace: 'nowrap' }}><SIcon name="github" size={18} /> Ver en GitHub</a>
-            <a style={{ display: 'inline-flex', alignItems: 'center', gap: 8, color: 'var(--paper)', fontFamily: 'var(--font-sans)', fontWeight: 700, fontSize: 16, border: '1.5px solid rgba(251,244,233,.4)', borderRadius: 'var(--r-pill)', padding: '13px 22px', textDecoration: 'none', whiteSpace: 'nowrap' }}><SIcon name="server" size={18} /> Guía de instalación</a>
+            <a href={GITHUB} target="_blank" rel="noopener" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'var(--paper)', color: 'var(--ink)', fontFamily: 'var(--font-sans)', fontWeight: 700, fontSize: 16, borderRadius: 'var(--r-pill)', padding: '13px 22px', textDecoration: 'none', whiteSpace: 'nowrap' }}><SIcon name="github" size={18} /> Ver en GitHub</a>
+            <a href={GITHUB_QUICKSTART} target="_blank" rel="noopener" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, color: 'var(--paper)', fontFamily: 'var(--font-sans)', fontWeight: 700, fontSize: 16, border: '1.5px solid rgba(251,244,233,.4)', borderRadius: 'var(--r-pill)', padding: '13px 22px', textDecoration: 'none', whiteSpace: 'nowrap' }}><SIcon name="server" size={18} /> Guía de inicio rápido</a>
           </div>
         </div>
         <div style={{ flex: '1 1 360px', minWidth: 300 }}>
           <div style={{ background: 'rgba(20,40,32,.55)', border: '1px solid rgba(251,244,233,.18)', borderRadius: 'var(--r-lg)', padding: 18, fontFamily: 'var(--font-mono)', fontSize: 14, lineHeight: 1.8 }}>
-            <div style={{ color: 'rgba(251,244,233,.5)' }}># levanta tu instancia de Auris</div>
-            <div><span style={{ color: 'var(--honey)' }}>$</span> docker run auris/engine \</div>
-            <div style={{ paddingLeft: 22 }}>--lang es-MX --channel whatsapp</div>
-            <div style={{ color: '#aee0c8', marginTop: 6 }}>✓ Instancia lista en http://localhost:8080</div>
+            <div style={{ color: 'rgba(251,244,233,.5)' }}># genera una lección de audio</div>
+            <div><span style={{ color: 'var(--honey)' }}>$</span> curl localhost:3000/generate \</div>
+            <div style={{ paddingLeft: 22 }}><span style={{ color: 'rgba(251,244,233,.6)' }}>-d</span> {`'{"text":"La fotosíntesis es…"}'`} \</div>
+            <div style={{ paddingLeft: 22 }}><span style={{ color: 'rgba(251,244,233,.6)' }}>-H</span> {`'Content-Type: application/json'`}</div>
+            <div style={{ color: '#aee0c8', marginTop: 6 }}>✓ {`{"audioUrl":"/audio/abc123.mp3"}`}</div>
           </div>
         </div>
       </div>
@@ -176,12 +179,12 @@ export function OpenSource() {
 
 export function Institutions() {
   const cards = [
-    { icon: 'building', t: 'Universidades', d: 'Llega a estudiantes foráneos y de tiempo parcial donde sí pueden estudiar: en el camino.' },
-    { icon: 'users', t: 'Empleadores', d: 'Capacita a tu personal operativo y de campo sin sacarlos de su jornada.' },
-    { icon: 'graduation-cap', t: 'Programas sociales', d: 'Alfabetización, prepa abierta y certificaciones, accesibles desde cualquier celular.' },
+    { icon: 'building', t: 'Universidades', d: 'Llega a estudiantes foráneos y de tiempo parcial donde sí pueden estudiar: en el camino. Carga el temario una vez, tus alumnos reciben las lecciones cada día.' },
+    { icon: 'users', t: 'Empleadores', d: 'Capacita a tu personal operativo y de campo sin sacarlos de su jornada. El contenido llega al WhatsApp que ya usan, sin hardware ni licencias extra.' },
+    { icon: 'graduation-cap', t: 'Programas sociales', d: 'Alfabetización, prepa abierta y certificaciones nacionales — accesibles desde cualquier celular con WhatsApp, sin requerir datos de alta velocidad.' },
   ];
   return (
-    <section style={{ maxWidth: 1120, margin: '0 auto', padding: '72px 24px' }}>
+    <section id="instituciones" style={{ maxWidth: 1120, margin: '0 auto', padding: '72px 24px' }}>
       <span style={{ fontFamily: 'var(--font-sans)', fontSize: 13, fontWeight: 700, letterSpacing: '.12em', textTransform: 'uppercase', color: 'var(--clay)' }}>Para instituciones</span>
       <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 34, letterSpacing: '-.01em', margin: '10px 0 40px', color: 'var(--ink)', maxWidth: 640 }}>Tu institución, en el bolsillo de cada estudiante.</h2>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 22 }}>
@@ -198,26 +201,36 @@ export function Institutions() {
 }
 
 export function SiteFooter() {
-  const col = (title, items) => (
-    <div>
-      <div style={{ fontFamily: 'var(--font-sans)', fontWeight: 700, fontSize: 14, color: 'var(--ink)', marginBottom: 12 }}>{title}</div>
-      {items.map(t => <a key={t} style={{ display: 'block', fontFamily: 'var(--font-sans)', fontSize: 14, color: 'var(--ink-2)', textDecoration: 'none', marginBottom: 9 }}>{t}</a>)}
-    </div>
-  );
+  const linkStyle = { display: 'block', fontFamily: 'var(--font-sans)', fontSize: 14, color: 'var(--ink-2)', textDecoration: 'none', marginBottom: 9 };
   return (
     <footer style={{ background: 'var(--paper-2)', borderTop: '1px solid var(--line)' }}>
       <div style={{ maxWidth: 1120, margin: '0 auto', padding: '56px 24px 32px', display: 'flex', gap: 48, flexWrap: 'wrap', justifyContent: 'space-between' }}>
         <div style={{ maxWidth: 280 }}>
           <img src={LOGO} height="28" alt="Auris" />
-          <p style={{ fontFamily: 'var(--font-sans)', fontSize: 14, lineHeight: 1.55, color: 'var(--ink-2)', margin: '14px 0 0' }}>Aprender empieza por escuchar. Hecho para estudiar en el camino, en México y Latinoamérica.</p>
+          <p style={{ fontFamily: 'var(--font-sans)', fontSize: 14, lineHeight: 1.55, color: 'var(--ink-2)', margin: '14px 0 0' }}>Aprender empieza por escuchar. Motor de lecciones de audio de código abierto, hecho para estudiar en el camino en México y Latinoamérica.</p>
         </div>
         <div style={{ display: 'flex', gap: 56, flexWrap: 'wrap' }}>
-          {col('Producto', ['Cómo funciona', 'Para instituciones', 'Precios', 'Preguntas'])}
-          {col('Código abierto', ['GitHub', 'Documentación', 'Autoalojamiento', 'Comunidad'])}
-          {col('Auris', ['Sobre el proyecto', 'Privacidad', 'Contacto'])}
+          <div>
+            <div style={{ fontFamily: 'var(--font-sans)', fontWeight: 700, fontSize: 14, color: 'var(--ink)', marginBottom: 12 }}>Producto</div>
+            <a href="#como-funciona" style={linkStyle}>Cómo funciona</a>
+            <a href="#instituciones" style={linkStyle}>Para instituciones</a>
+            <a href="#codigo-abierto" style={linkStyle}>Código abierto</a>
+          </div>
+          <div>
+            <div style={{ fontFamily: 'var(--font-sans)', fontWeight: 700, fontSize: 14, color: 'var(--ink)', marginBottom: 12 }}>Repositorio</div>
+            <a href={GITHUB} target="_blank" rel="noopener" style={linkStyle}>GitHub</a>
+            <a href={GITHUB + '#architecture--api-core--clients'} target="_blank" rel="noopener" style={linkStyle}>Documentación</a>
+            <a href={GITHUB_QUICKSTART} target="_blank" rel="noopener" style={linkStyle}>Autoalojamiento</a>
+            <a href={GITHUB + '/blob/main/CONTRIBUTING.md'} target="_blank" rel="noopener" style={linkStyle}>Contribuir</a>
+          </div>
+          <div>
+            <div style={{ fontFamily: 'var(--font-sans)', fontWeight: 700, fontSize: 14, color: 'var(--ink)', marginBottom: 12 }}>Auris</div>
+            <a href={GITHUB} target="_blank" rel="noopener" style={linkStyle}>Sobre el proyecto</a>
+            <a href={GITHUB + '/blob/main/CHANGELOG.md'} target="_blank" rel="noopener" style={linkStyle}>Changelog</a>
+          </div>
         </div>
       </div>
-      <div style={{ borderTop: '1px solid var(--line)', padding: '18px 24px', textAlign: 'center', fontFamily: 'var(--font-sans)', fontSize: 13, color: 'var(--ink-3)' }}>© 2026 Auris · Software libre, licencia MIT</div>
+      <div style={{ borderTop: '1px solid var(--line)', padding: '18px 24px', textAlign: 'center', fontFamily: 'var(--font-sans)', fontSize: 13, color: 'var(--ink-3)' }}>© 2026 Auris · <a href={GITHUB + '/blob/main/LICENSE'} target="_blank" rel="noopener" style={{ color: 'inherit' }}>Software libre, licencia MIT</a></div>
     </footer>
   );
 }
