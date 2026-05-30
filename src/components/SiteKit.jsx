@@ -40,7 +40,7 @@ export function SiteNav() {
   return (
     <nav style={{ position: 'sticky', top: 0, zIndex: 10, background: 'rgba(251,244,233,.86)', backdropFilter: 'blur(8px)', borderBottom: '1px solid var(--line)' }}>
       <div style={{ maxWidth: 1120, margin: '0 auto', padding: '14px 24px', display: 'flex', alignItems: 'center', gap: 28 }}>
-        <img src={LOGO} height="30" alt="Auris" style={{ display: 'block' }} />
+        <img src={LOGO} height="40" alt="Auris" style={{ display: 'block' }} />
         <div style={{ flex: 1 }} />
         <div style={{ display: 'flex', gap: 26, alignItems: 'center' }} className="navlinks">
           <a style={link}>Cómo funciona</a>
